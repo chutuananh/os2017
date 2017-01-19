@@ -1,0 +1,21 @@
+$ ls | grep "list"
+list
+list_cta
+
+$ wc -l /etc/passwd
+41 /etc/passwd
+
+$ free -t -h
+              total        used        free      shared  buff/cache   available
+Mem:           3,8G        1,0G        1,9G        159M        873M        2,3G
+Swap:          7,6G          0B        7,6G
+Total:          11G        1,0G        9,5G
+
+$ cat /proc/cpuinfo | grep "siblings"
+siblings	: 4
+siblings	: 4
+siblings	: 4
+siblings	: 4
+
+$ find /home/tuananh/Pictures -type f -name "*.jpg" | wc -l
+1
