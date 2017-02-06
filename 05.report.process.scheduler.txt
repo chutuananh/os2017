@@ -1,0 +1,20 @@
+$ cat /proc/sched_debug | grep "systemd"
+cfs_rq[0]:/system.slice/systemd-logind.service
+cfs_rq[0]:/system.slice/systemd-timesyncd.service
+cfs_rq[0]:/system.slice/system-systemd\x2dfsck.slice
+cfs_rq[0]:/system.slice/systemd-udevd.service
+cfs_rq[0]:/system.slice/systemd-journald.service
+      sd-resolve  2452         8.693355        26   120         0.079000         2.743722     60428.224860 0 0 /system.slice/systemd-timesyncd.service
+  systemd-logind  2568         9.010661       430   120        26.528638        40.493228   1463412.483508 0 0 /system.slice/systemd-logind.service
+cfs_rq[1]:/system.slice/systemd-logind.service
+cfs_rq[1]:/system.slice/systemd-timesyncd.service
+cfs_rq[1]:/system.slice/system-systemd\x2dfsck.slice
+cfs_rq[1]:/system.slice/systemd-udevd.service
+cfs_rq[1]:/system.slice/systemd-journald.service
+         systemd     1       296.997398      1828   120        36.227414      1540.045675   1554442.179459 0 0 /init.scope
+ systemd-timesyn  2405         4.859308       152   120         0.086787        15.253666   1524104.653974 0 0 /system.slice/systemd-timesyncd.service
+
+$ cat /proc/1/sched | grep "switch"
+nr_switches                                  :                 1834
+nr_voluntary_switches                        :                 1535
+nr_involuntary_switches                      :                  299
