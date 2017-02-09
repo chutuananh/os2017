@@ -1,0 +1,7 @@
+$ ps -e | grep "firefox"
+ 4077 ?        00:11:09 firefox
+$ ps -o nlwp 4077
+NLWP
+  50
+$ ls /proc/4077/task | wc -l
+50
