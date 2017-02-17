@@ -31,9 +31,10 @@ item *consume() {
     last = (last + 1) % BUFFER_SIZE;
     return i;
 }
-
+// Produce 3 items
 void *Prothread(void *param){
-item i1, i2, i3;
+// Declare 3 items
+	item i1, i2, i3;
 	i1.type = '1';
 	i1.amount = 6;
 	i1.unit = '1';
@@ -45,25 +46,26 @@ item i1, i2, i3;
 	i3.type = '3';
 	i3.amount = 5;
 	i3.unit = '3';
-
+// Print type, amount, unit of each items
 	printf("item 1:\n Type: %c\n Amount: %d\n Unit: %c\n", i1.type, i1.amount, i1.unit);
 	printf("item 2:\n Type: %c\n Amount: %d\n Unit: %c\n", i2.type, i2.amount, i2.unit);
 	printf("item 3:\n Type: %c\n Amount: %d\n Unit: %c\n", i3.type, i3.amount, i3.unit);
-
-	printf("Produce 3 items:\n");
+// Print first, last values of each items
 	produce(&i1);
 	printf("Produce item 1: first: %d  last: %d\n", first, last);
+	
 	produce(&i2);
 	printf("Produce item 2: first: %d  last: %d\n", first, last);
+	
 	produce(&i3);
-	printf("Produce item 3: first: %d  last: %d\n\n", first, last);
+	printf("Produce item 3: first: %d  last: %d\n", first, last);
 	return 0;
 }
-
+// Consume 2 items
 void *Conthread(void *param){
-	printf("Consume 2 items\n");
 	consume();
-	printf("Consume an item: first: %d  last: %d\n", first, last);
+	printf("\nConsume an item: first: %d  last: %d\n", first, last);
+	
 	consume();
 	printf("Consume another item: first: %d  last: %d\n", first, last);
 	return 0;
@@ -71,9 +73,12 @@ void *Conthread(void *param){
 
 int main(){
 	pthread_t pt, ct;
+// Produce 3 items in thread
 	pthread_create(&pt, NULL, Prothread, NULL);
-	pthread_join(pt, NULL);
+// Consume 2 items in thread	
 	pthread_create(&ct, NULL, Conthread, NULL);
+	
+	pthread_join(pt, NULL);
 	pthread_join(ct, NULL);
 	return 0;
 }
