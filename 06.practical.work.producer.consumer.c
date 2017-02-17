@@ -42,16 +42,14 @@ int main(){
    i2.amount = 7;
    i2.unit = '2';
 
-   printf("- Item 1:\n Type: %c\n Amount: %d\n Unit: %c\n",i1.type,i1.amount,i1.unit);
    produce(&i1);
-   printf(" First: %d, last: %d\n", first, last);
-    
-   printf("\n- Item 2:\n Type: %c\n Amount: %d\n Unit: %c\n",i2.type,i2.amount,i2.unit);
+   printf("Item 1:\n Type: %c\n Amount: %d\n Unit: %c\n First: %d\n Last: %d\n", i1.type, i1.amount, i1.unit, first, last);
+   
    produce(&i2);
-   printf(" First: %d, last: %d\n", first, last);
+   printf("\nItem 2:\n Type: %c\n Amount: %d\n Unit: %c\n First: %d\n Last: %d\n", i2.type, i2.amount, i2.unit, first, last);
     
-   item* consumed = consume();
-   printf("\n- Item consumed:\n Type: %c\n Amount: %d\n Unit: %c\n", consumed->type, consumed->amount, consumed->unit);
-   printf(" First: %d, last: %d\n", first, last);
+   item* t = consume();
+   printf("\nItem consumed:\n Type: %c\n Amount: %d\n Unit: %c\n First: %d\n Last: %d\n", t->type, t->amount, t->unit, first, last);
+  
    return 0;
 }
