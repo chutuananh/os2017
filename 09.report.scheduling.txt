@@ -90,7 +90,7 @@ P4          | A=1.3ms       |
         
         --------------------------------------------------------------->
 
-- Average waiting time of these processes is: (0+0+0+4.1)/4 = 1.025
+- Average waiting time of these processes is: (10+1+0+4.1)/4 = 3.775
 - Average turnaround time of these processes is: (18+5+1+9.1)/4 = 8.275
 
 +) RR: (s=1ms)
@@ -121,7 +121,7 @@ P4          | A=1.3ms       |
 
         ----------------------------------------------------------------------->
 
-- Average waiting time of these processes is: (0+0.6+1+1.7)/4 = 0.825
+- Average waiting time of these processes is: (10+7.6+1+8.7)/4 = 6.825
 - Average turnaround time of these processes is: (18+11.6+2+13.7)/4 = 11.325
 
 
